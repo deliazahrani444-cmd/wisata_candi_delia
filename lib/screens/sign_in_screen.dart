@@ -148,26 +148,28 @@ class _SignInScreenState extends State<SignInScreen> {
                     //     child: Text('Belum punya akun? Daftar di sini.')
                     // ),
                     RichText(
-                        text: TextSpan(
-                            text: 'Belum punya akun? ',
+                      text: TextSpan(
+                        text: 'Belum punya akun? ',
+                        style: const TextStyle(
+                          fontSize: 16,
+                          color: Colors.deepPurple,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: 'Daftar di sini.',
                             style: const TextStyle(
+                              color: Colors.blue,
+                              decoration: TextDecoration.underline,
                               fontSize: 16,
-                              color: Colors.deepPurple,
                             ),
-                            children: [
-                              TextSpan(
-                                text: 'Daftar di sini.',
-                                style: const TextStyle(
-                                  color: Colors.blue,
-                                  decoration: TextDecoration.underline,
-                                  fontSize: 16,
-                                ),
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () {
-                                    Navigator.pushNamed(context, '/signup');
-                                  },
-                              ),
-                            ]))
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                Navigator.pushNamed(context, '/signup');
+                              },
+                          ),
+                        ]
+                      )
+                    )
                   ],
                 ),
               ),
